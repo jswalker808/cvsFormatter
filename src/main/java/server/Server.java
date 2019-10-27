@@ -2,7 +2,6 @@ package server;
 
 import com.sun.net.httpserver.HttpServer;
 
-import javax.sound.midi.SysexMessage;
 import java.io.IOException;
 import java.net.InetSocketAddress;
 
@@ -23,13 +22,12 @@ public class Server {
         }
 
         server.setExecutor(null);
-
         System.out.println("Creating contexts");
 
-        server.createContext("/format");
+        // contexts
+        server.createContext("/format", new FormatHandler());
 
         server.start();
-
         System.out.println("Server running on port " + portNumber);
     }
 
