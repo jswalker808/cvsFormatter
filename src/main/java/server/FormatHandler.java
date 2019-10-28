@@ -1,6 +1,6 @@
 package server;
 
-import Utils.ReaderWriter;
+import utils.ReaderWriter;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.sun.net.httpserver.Headers;
@@ -25,7 +25,7 @@ public class FormatHandler implements HttpHandler {
 
         try {
 
-            if (httpExchange.getRequestMethod().equals("POST")) {
+            if (httpExchange.getRequestMethod().equals("PUT")) {
 
                 FormatRequest request = getRequest(httpExchange);
 
